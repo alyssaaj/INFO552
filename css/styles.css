@@ -331,6 +331,197 @@ template {
 /* =============
     Base
 ============= */
+#main-grid-content {
+  display: -ms-grid;
+  display: grid;
+  background-color: black;
+  padding: 25px;
+  gap: 25px;
+  height: 100vh;
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+  -ms-grid-rows: 1fr 25px 1fr 25px 1fr 25px 1fr 25px 1fr;
+  grid-template-rows: repeat(5, 1fr);
+      grid-template-areas: "pi" "pu" "pu" "db" "bl";
+}
+#main-grid-content .grid-item {
+  height: 100%;
+}
+#main-grid-content #aqua {
+  display: none;
+}
+#main-grid-content #green {
+  display: none;
+}
+#main-grid-content #yellow {
+  display: none;
+}
+@media (min-width: 576px) {
+  #main-grid-content {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+    -ms-grid-rows: (1fr)[5];
+    grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: "pi" "pu" "pu" "db" "bl";
+  }
+  #main-grid-content #aqua {
+    display: none;
+  }
+  #main-grid-content #green {
+    display: none;
+  }
+  #main-grid-content #yellow {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  #main-grid-content {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[3];
+    grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "pu bl" "pu pi" "aq db";
+  }
+  #main-grid-content #aqua {
+    display: block;
+  }
+  #main-grid-content #green {
+    display: none;
+  }
+  #main-grid-content #yellow {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  #main-grid-content {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[3];
+    grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: "pu bl ye" "pu pi gr" "db aq gr";
+  }
+  #main-grid-content #aqua {
+    display: block;
+  }
+  #main-grid-content #green {
+    display: block;
+  }
+  #main-grid-content #yellow {
+    display: block;
+  }
+}
+#main-grid-content #pink {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  background-color: #F72585;
+  grid-area: pi;
+}
+#main-grid-content #purple {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  background-color: #7209B7;
+  grid-area: pu;
+}
+#main-grid-content #darkblue {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  background-color: #3A0CA3;
+  grid-area: db;
+}
+#main-grid-content #blue {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  background-color: #4361EE;
+  grid-area: bl;
+}
+#main-grid-content #aqua {
+  background-color: #4CC9F0;
+  grid-area: aq;
+}
+#main-grid-content #green {
+  background-color: #2DD8BB;
+  grid-area: gr;
+}
+#main-grid-content #yellow {
+  background-color: #FFD;
+  grid-area: ye;
+}
+@media (min-width: 576px) {
+  #main-grid-content #pink {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  #main-grid-content #purple {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  #main-grid-content #darkblue {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+  #main-grid-content #blue {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+  }
+}
+@media (min-width: 768px) {
+  #main-grid-content #pink {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  #main-grid-content #purple {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  #main-grid-content #darkblue {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  #main-grid-content #blue {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  #main-grid-content #aqua {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+}
+@media (min-width: 1200px) {
+  #main-grid-content #pink {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  #main-grid-content #purple {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  #main-grid-content #darkblue {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  #main-grid-content #blue {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  #main-grid-content #aqua {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  #main-grid-content #green {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+  }
+  #main-grid-content #yellow {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+}
+
 /* =============
     Typography
 ============= */
@@ -340,23 +531,6 @@ template {
 /* =============
     Forms
 ============= */
-[type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=number], [type=search], [type=tel], [type=time], [type=url], [type=color], textarea {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-[type=text]:focus, [type=password]:focus, [type=date]:focus, [type=datetime]:focus, [type=datetime-local]:focus, [type=month]:focus, [type=week]:focus, [type=email]:focus, [type=number]:focus, [type=search]:focus, [type=tel]:focus, [type=time]:focus, [type=url]:focus, [type=color]:focus, textarea:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-input[type=text],
-input[type=email],
-input[type=password],
-textarea {
-  -webkit-appearance: none;
-}
-
 /* =============
     Navigation
 ============= */
@@ -365,4 +539,7 @@ textarea {
 ============= */
 /* =============
     Footer
+============= */
+/* =============
+    Color Blocks
 ============= */

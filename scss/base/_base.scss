@@ -2,4 +2,127 @@
     Base
 ============= */
 
+#main-grid-content{
+  display: grid;
+  background-color: black;
+  padding: 25px;
+  gap: 25px;
+  height: 100vh;
 
+  .grid-item{
+      height: 100%;
+
+  }
+
+  grid-template-columns: auto;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+  "pi"
+  "pu"
+  "pu"
+  "db"
+  "bl";
+  #aqua {
+    display: none;
+  }
+  #green {
+    display: none;
+  }
+  #yellow {
+    display: none;
+  }
+
+
+    @include sm{
+      grid-template-columns: auto;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas:
+      "pi"
+      "pu"
+      "pu"
+      "db"
+      "bl";
+      #aqua {
+        display: none;
+      }
+      #green {
+        display: none;
+      }
+      #yellow {
+        display: none;
+      }
+    }
+
+    @include md{
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+      "pu bl"
+      "pu pi"
+      "aq db";
+      #aqua {
+        display: block;
+      }
+      #green {
+        display: none;
+      }
+      #yellow {
+        display: none;
+      }
+    }
+
+    @include xl{
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,1fr);
+      grid-template-areas:
+      "pu bl ye"
+      "pu pi gr"
+      "db aq gr";
+      #aqua {
+        display: block;
+      }
+      #green {
+        display: block;
+      }
+      #yellow {
+        display: block;
+      }
+
+    }
+
+
+    #pink {
+        background-color: #F72585;
+        grid-area: pi;
+    }
+
+    #purple {
+        background-color: #7209B7;
+        grid-area: pu;
+    }
+
+    #darkblue {
+        background-color: #3A0CA3;
+        grid-area: db;
+    }
+
+    #blue {
+        background-color: #4361EE;
+        grid-area: bl;
+    }
+
+    #aqua {
+        background-color: #4CC9F0;
+        grid-area: aq;
+    }
+
+    #green {
+        background-color: #2DD8BB;
+        grid-area: gr;
+    }
+
+    #yellow {
+        background-color: #FFD;
+        grid-area: ye;
+    }
+}
